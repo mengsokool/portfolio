@@ -1,101 +1,124 @@
+"use client";
+
 import Image from "next/image";
+import {
+  Code,
+  Laptop,
+  Mail,
+} from "lucide-react";
+import ProjectCard from "@/components/project-card";
+import { projects } from "@/data/projects";
+import { skills } from "@/data/skills";
+import { contactChannels } from "@/data/contact-chanels";
+import GridPattern from "@/components/ui/grid-pattern";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <main className="relative">
+      {/* Profile Cover */}
+      <div className="relative h-48 w-full">
+        <div className="object-cover bg-gradient-to-b from-violet-500/50 to-transparent w-full h-full" />
+        <GridPattern
+          width={20}
+          height={20}
+          x={-1}
+          y={-1}
+          className={cn(
+            "[mask-image:linear-gradient(to_bottom,white,transparent,transparent)] "
+          )}
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <div className="container mx-auto max-w-4xl px-4 py-8 relative">
+        {/* Profile Picture - positioned to overlap cover */}
+        <div className="absolute -top-16 md:-top-20 left-4">
+          <Image
+            alt="เม้ง"
+            src="/images/meng.png"
+            width={150}
+            height={150}
+            className="rounded-full border-4 border-white size-32 md:size-40"
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Content shifted to accommodate profile picture */}
+        <section className="flex gap-8 mb-12 flex-col mt-20 md:mt-24">
+          <div>
+            <h1 className="text-3xl font-bold">สวัสดี! ผมชื่อเหม่ง 👋</h1>
+            <p className="text-xl text-gray-600">Software Developer</p>
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <p className="md:text-lg text-neutral-800">
+            ผมเข้าใจว่าการเขียนโค้ดอาจจะเป็นเรื่องที่ท้าทายและซับซ้อนตั้งแต่เริ่มต้น
+            แต่ผมพร้อมที่จะเรียนรู้และเผชิญกับทุกความท้าทายที่มาพร้อมกับการพัฒนาทักษะในการเขียนโค้ด
+            ผมเชื่อว่าการเรียนรู้เป็นระยะเวลายาวนานและการฝึกฝนอย่างต่อเนื่องเป็นสิ่งสำคัญที่จะทำให้เราเติบโตและเป็นมืออาชีพที่เก่งในอนาคต
+          </p>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4 flex items-center">
+            <Code className="mr-2" /> ทักษะ
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+            {skills.map((skill) => (
+              <div key={skill.name} className="bg-white border p-4 rounded-lg">
+                <h3 className="font-medium line-clamp-1">{skill.name}</h3>
+                <p className="text-sm text-gray-600 line-clamp-1">
+                  {skill.level}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4 flex items-center">
+            <Laptop className="mr-2" /> โปรเจ็คที่ผ่านมา
+          </h2>
+          <div className="space-y-4">
+            {projects.map((project) => (
+              <div key={project.name}>
+                <ProjectCard project={project} />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-12">
+          <h2 className="text-2xl font-semibold mb-4 flex items-center">
+            <Mail className="mr-2" /> ช่องทางการติดต่อ
+          </h2>
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {contactChannels.map((channel) => (
+              <a
+                key={channel.name}
+                href={channel.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border bg-white p-4 rounded-lg flex items-center justify-center hover:bg-gray-200 transition"
+              >
+                <channel.icon className="mr-2" />
+                <span>{channel.name}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      </div>
+      <div className="absolute -z-10 bottom-0 left-0 right-0 h-64 w-full">
+        <div className="object-cover bg-gradient-to-t from-violet-500/20 to-transparent w-full h-full" />
+        <GridPattern
+          width={20}
+          height={20}
+          x={-1}
+          y={-1}
+          className={cn(
+            "[mask-image:linear-gradient(to_top,white,transparent,transparent)] "
+          )}
+        />
+      </div>
+    </main>
   );
 }
