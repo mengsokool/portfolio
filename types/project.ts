@@ -3,4 +3,5 @@ export interface Project {
   description: string;
   technologies: string[];
   link?: string;
+  coverImage?: string;
 }

@@ -1,17 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import {
-  Code,
-  Laptop,
-  Mail,
-} from "lucide-react";
+import { Bolt, Code, Laptop, Mail } from "lucide-react";
 import ProjectCard from "@/components/project-card";
 import { projects } from "@/data/projects";
 import { skills } from "@/data/skills";
 import { contactChannels } from "@/data/contact-chanels";
 import GridPattern from "@/components/ui/grid-pattern";
 import { cn } from "@/lib/utils";
+import { services } from "@/data/services";
+import ServiceCard from "@/components/service-card";
 
 export default function Home() {
   return (
@@ -74,17 +72,33 @@ export default function Home() {
           </div>
         </section>
 
-        <section>
+        <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-4 flex items-center">
             <Laptop className="mr-2" /> โปรเจ็คที่ผ่านมา
           </h2>
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {projects.map((project) => (
               <div key={project.name}>
                 <ProjectCard project={project} />
               </div>
             ))}
           </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4 flex items-center">
+            <Bolt className="mr-2" /> บริการของผม
+          </h2>
+          <div className="space-y-4">
+            {services.map((service) => (
+              <div key={service.title}>
+                <ServiceCard service={service} />
+              </div>
+            ))}
+          </div>
+          <p className="text-muted-foreground mt-4">
+            *ผู้ที่สนใจติดต่องาน สามารถติดต่อผมมาผ่านช่องทางการติดต่อด้านล่างได้ทันที
+          </p>
         </section>
 
         <section className="mt-12">

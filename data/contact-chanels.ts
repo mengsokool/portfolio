@@ -5,21 +5,21 @@ export const contactChannels: ContactChannel [] = [
     {
       icon: Facebook,
       name: "Facebook",
-      link: "https://facebook.com/yourusername",
+      link: "https://www.facebook.com/phachr.phl.sri.da",
     },
     {
       icon: Mail,
       name: "Email",
-      link: "mailto:youremail@example.com",
+      link: "mailto:muc5674@gmail.com",
     },
     {
       icon: MessageCircle,
       name: "Line",
-      link: "https://line.me/ti/p/yourlineid",
+      link: "https://line.me/ti/p/patphon.sd",
     },
     {
       icon: Github,
       name: "GitHub",
-      link: "https://github.com/yourusername",
+      link: "https://github.com/mengsokool",
     },
   ];
