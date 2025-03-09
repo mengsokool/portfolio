@@ -1,3 +1,3 @@
 # Meng's Portfolio
 
-ขก. เขียน README อ่ะ แถมยังทำไม่เสร็จด้วย
+อันนี้เป็น Prototype Project, ตัว Portfolio จริงๆอยู่ที่ https://mengsokool.space เด้อ
